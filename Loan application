@@ -1,0 +1,8 @@
+min_age = 21
+min_income = 21000
+age = int(input("Enter your age: "))
+income = float(input("Enter your annual income (in Sh): "))
+if age >= min_age and income >= min_income:
+    print("Congratulations! You qualify for a loan.")
+else:
+    print("Unfortunately, you are not eligible for a loan at this time.")
