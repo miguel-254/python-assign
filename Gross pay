@@ -1,0 +1,4 @@
+hours_worked = float(input("Enter Hours: "))
+rate_per_hour = float(input("Enter Rate: "))
+gross_pay = hours_worked * rate_per_hour
+print(f"Gross Pay: kshs{gross_pay:.2f}")
