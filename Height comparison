@@ -1,0 +1,27 @@
+def find_tallest(student1_height, student2_height, student3_height):
+  """Finds the tallest student among three students.
+
+  Args:
+      student1_height: The height of the first student in centimeters.
+      student2_height: The height of the second student in centimeters.
+      student3_height: The height of the third student in centimeters.
+
+  Returns:
+      The height of the tallest student in centimeters.
+  """
+
+  
+  tallest_height = max(student1_height, student2_height, student3_height)
+
+  return tallest_height
+
+
+student1_height = int(input("Enter student 1's height (cm): "))
+student2_height = int(input("Enter student 2's height (cm): "))
+student3_height = int(input("Enter student 3's height (cm): "))
+
+
+tallest_student_height = find_tallest(student1_height, student2_height, student3_height)
+
+
+print(f"The tallest student is {tallest_student_height} cm tall.")
