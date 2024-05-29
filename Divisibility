@@ -1,0 +1,26 @@
+def check_divisibility(number):
+  """Checks if a number is divisible by 5, 7, 11, and even.
+
+  Args:
+      number: The number to be checked.
+
+  Returns:
+      A dictionary indicating the divisibility of the number by 5, 7, 11, and even.
+  """
+
+  divisibility = {
+      "divisible_by_5": number % 5 == 0,
+      "divisible_by_7": number % 7 == 0,
+      "divisible_by_11": number % 11 == 0,
+      "is_even": number % 2 == 0
+  }
+  return divisibility
+
+number = int(input("Enter a number: "))
+
+divisibility_results = check_divisibility(number)
+
+
+print(f"Number: {number}")
+for key, value in divisibility_results.items():
+  print(f"  - Divisible by {key.split('_')[-1]}: {value}")
