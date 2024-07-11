@@ -1,0 +1,29 @@
+class LibraryMember:
+    def __init__(self, member_id, name):
+        self.member_id = member_id
+        self.name = name
+        self.borrowed_books = []
+
+    def borrow_book(self, book):
+        if book.borrowed:
+            print("Book is already borrowed by someone else.")
+        else:
+            book.borrow_book()
+            self.borrowed_books.append(book)
+            print(f"{book.title} has been borrowed by {self.name}.")
+
+    def return_book(self, book):
+        if book in self.borrowed_books:
+            book.return_book()
+            self.borrowed_books.remove(book)
+            print(f"{book.title} has been returned by {self.name}.")
+        else:
+            print(f"{self.name} does not have {book.title} to return.")
+
+    def display_info(self):
+        print(f"Member ID: {self.member_id}")
+        print(f"Name: {self.name}")
+        print("Borrowed Books:")
+        for book in self.borrowed_books:
+            print(f"  {book.title} by {book.author}")
+
