@@ -1,0 +1,43 @@
+class BankAccount:
+    def __init__(self, account_number, customer_name, date_of_opening, initial_balance=0):
+        self.account_number = account_number
+        self.customer_name = customer_name
+        self.date_of_opening = date_of_opening
+        self.balance = initial_balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return amount
+
+    def withdraw(self, amount):
+        if self.balance < amount:
+            return "Insufficient balance"
+        self.balance -= amount
+        return amount
+
+    def check_balance(self):
+        print(f"Current balance: {self.balance}")
+
+    def customer_details(self):
+        print(f"Customer Name: {self.customer_name}")
+        print(f"Account Number: {self.account_number}")
+        print(f"Date of Opening: {self.date_of_opening}")
+        print(f"Balance: {self.balance}")
+
+# Create an instance of the BankAccount class
+account = BankAccount("1234567890", "John Doe", "2022-01-01", 1000)
+
+# Perform operations
+print("Initial deposit:")
+print(account.deposit(500))  # Deposit $500
+account.check_balance()  # Check balance
+
+print("\nWithdrawal:")
+print(account.withdraw(200))  # Withdraw $200
+account.check_balance()  # Check balance
+
+print("\nInsufficient balance:")
+print(account.withdraw(1500))  # Try to withdraw $1500 (insufficient balance)
+
+print("\nAccount information:")
+account.customer_details()  # Display account information
