@@ -44,16 +44,3 @@ def update_quantity(product, quantity_change):
     """
     product["quantity"] += quantity_change
     return product
-
-# Example usage:
-product1 = add_product("Apple Watch", 299.99, 10)
-print(product1)  # Output: {'name': 'Apple Watch', 'price': 299.99, 'quantity': 10}
-
-product1 = update_price(product1, 299.99 + 20)
-print(product1)  # Output: {'name': 'Apple Watch', 'price': 319.99, 'quantity': 10}
-
-product1 = update_quantity(product1, 5)
-print(product1)  # Output: {'name': 'Apple Watch', 'price': 319.99, 'quantity': 15}
-
-product1 = update_quantity(product1, -3)
-print(product1)  # Output: {'name': 'Apple Watch', 'price': 319.99, 'quantity': 12}
